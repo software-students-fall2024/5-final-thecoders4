@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Finder{% endblock %}
+
+{% block header %}
+    <h1>Find Your Perfect Dog Companion with Social Traits</h1>
+{% endblock %}
+
+{% block main %}
+    <p>Choose Your Preference On Following Questions</p>
+    <form method="POST">
+        <p>Openness to Strangers:</p>
+        <p>How welcoming a breed is likely to be towards strangers. Some breeds will be reserved or cautious around all strangers, regardless of the location, while other breeds will be happy to meet a new human whenever one is around!</br>
+            <input type="radio" name="openness" value="reserved">Reserved</br>
+			<input type="radio" name="openness" value="everyone">Everyone is My Best Friend</br>
+			<input type="radio" name="openness" value="both" required>Both are fine</br>
+        </p>
+        <p>Playfulness Level:</p>
+        <p>How enthusiastic about play a breed is likely to be, even past the age of puppyhood. Some breeds will continue wanting to play tug-of-war or fetch well into their adult years, while others will be happy to just relax on the couch with you most of the time.</br>
+            <input type="radio" name="playfulness" value="only">Only When You Want To Play</br>
+            <input type="radio" name="playfulness" value="non_stop">Non-Stop</br>
+            <input type="radio" name="playfulness" value="both" required>Both are fine</br>
+        </p>
+        <p>Watchdog/Protective Nature:</p>
+        <p>A breed's tendency to alert you that strangers are around. These breeds are more likely to react to any potential threat, whether it's the mailman or a squirrel outside the window. These breeds are likely to warm to strangers who enter the house and are accepted by their family.</br>
+            <input type="radio" name="nature" value="mine">What's Mine is Yours</br>
+            <input type="radio" name="nature" value="vigilant">Vigilant</br>
+            <input type="radio" name="nature" value="both" required>Both are fine</br>
+        </p>
+        <p>Adaptability Level:</p>
+        <p>How easily a breed handles change. This can include changes in living conditions, noise, weather, daily schedule, and other variations in day-to-day life.</br>
+            <input type="radio" name="adaptability" value="routine">Lives For Routine</br>
+            <input type="radio" name="adaptability" value="adaptable">Highly Adaptable</br>
+            <input type="radio" name="adaptability" value="both" required>Both are fine</br>
+        </p>
+        <button type="submit">Next</button>
+    </form>
+{% endblock %}
