@@ -27,5 +27,11 @@ def create_app():
                 except ValueError:
                     pass
     collections.insert_many(data)
-            
     
+    @app.route('/home')
+    def home():
+        """
+        Route for the home page
+        Returns: rendered template (str): the rendered HTML template
+        """
+        return render_template("index.html")
