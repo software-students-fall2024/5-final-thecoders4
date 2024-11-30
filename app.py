@@ -1,6 +1,7 @@
+import os
+import csv
 from flask import Flask, render_template, url_for
 from pymongo import MongoClient
-import os
 
 def create_app():
     """
@@ -13,4 +14,18 @@ def create_app():
     client = MongoClient(mongo_uri)
     db = client.database
     collections = db.collections
+    
+    #handle the csv files
+    csv_file_path = "archive/breed_traits.csv"
+    with open(csv_file_path, mode="r") as file:
+        reader = csv.DictReader(file)
+        data = [row for row in reader]
+        for entry in data:
+            for key in entry:
+                try: 
+                    entry[key] = int(entry[key])
+                except ValueError:
+                    pass
+    collections.insert_many(data)
+            
     
