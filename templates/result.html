@@ -13,9 +13,9 @@
         <p>{{count}}</p>
         {% for doc in docs %}
             <p>{{doc.Breed}}</p>
-            <p>{{doc["Affectionate With Family"]}}</p>
-            <p>{{doc["Good With Young Children"]}}</p>
-            <p>{{doc["Good With Other Dogs"]}}</p>
+            <a href="{{url_for('info',dog_breed=doc.Breed)}}">
+                <button>See More About This Breed</button>
+            </a>
         {% endfor %}
     {% endif %}
 {% endblock %}

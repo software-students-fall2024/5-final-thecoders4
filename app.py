@@ -132,9 +132,13 @@ def create_app():
             query["Mental Stimulation Needs"] = {"$lte": 2}
         elif session["mental_stimulation_needs"] == "job":
             query["Mental Stimulation Needs"] = {"$gte": 4}
-        docs = collections.find(query,{"_id": 0, "Breed":1})
+        docs = collections.find(query)
         docs_list = list(docs)
         return render_template('result.html',docs=docs_list,count=len(docs_list))
+    @app.route('/info/<dog_breed>')
+    def info(dog_breed):
+        doc = collections.find_one({"Breed":dog_breed})
+        return render_template('info.html',doc=doc)
     return app
 if __name__ == '__main__':
     app = create_app()
