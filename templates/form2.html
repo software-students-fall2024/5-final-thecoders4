@@ -8,7 +8,7 @@
 
 {% block main %}
     <p>Choose Your Preference On Following Questions</p>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('question2')}}">
         <p>Shedding Level:</p>
         <p>How much fur and hair you can expect the breed to leave behind. Breeds with high shedding will need to be brushed more frequently, are more likely to trigger certain types of allergies, and are more likely to require more consistent vacuuming and lint-rolling.</br>
             <input type="radio" name="shedding" value="no_shedding">No Shedding</br>

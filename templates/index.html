@@ -8,7 +8,7 @@
 
 {% block main %}
     <p>Answer a few quick questions to discover the dog breed that suits your likestyle best.</p>
-    <a href="form1.html">
+    <form method="GET" action="{{ url_for('question1') }}">
         <button>Start Quiz</button>
-    </a>
+    </form>
 {% endblock %}

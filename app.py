@@ -9,7 +9,7 @@ def create_app():
     Returns: app: the Flask application object
     """
     app = Flask(__name__)
-    app.secret_key = os.getenv('FLASK_SECRET_KEY')
+    app.secret_key = "secret key"
     # mongo setup
     mongo_uri = os.getenv("MONGO_URI")
     client = MongoClient(mongo_uri)
@@ -18,9 +18,10 @@ def create_app():
     
     #handle the csv files
     csv_file_path = "archive/breed_traits.csv"
+    
     with open(csv_file_path, mode="r") as file:
         reader = csv.DictReader(file)
-        data = [row for row in reader]
+        data = list(reader)
         for entry in data:
             for key in entry:
                 try: 
@@ -28,7 +29,6 @@ def create_app():
                 except ValueError:
                     pass
     collections.insert_many(data)
-    
     @app.route('/')
     def home():
         """
@@ -43,6 +43,7 @@ def create_app():
             session["good_with_young_children"] = request.form.get("children")
             session["good_with_other_dogs"] = request.form.get("dog")
             return redirect(url_for('question2'))
+        print("are you here?")
         return render_template('form1.html')
     @app.route('/question2', methods=['GET','POST'])
     def question2():
@@ -69,10 +70,15 @@ def create_app():
             session["barking_level"] = request.form.get("barking")
             session["mental_stimulation_needs"] = request.form.get("mental")
             return redirect(url_for('result'))
-        return render_template('form3.html')
+        return render_template('form4.html')
+    @app.route('/result')
     def result():
-        print(session["mental_stimulation_needs"])
-        
+        session["affectionate_with_family"]
+        session["good_with_young_children"]
+        session["good_with_other_dogs"]
+        session["mental_stimulation_needs"]
+    
+    return app
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)

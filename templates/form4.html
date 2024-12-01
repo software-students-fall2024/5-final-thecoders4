@@ -8,7 +8,7 @@
 
 {% block main %}
     <p>Choose Your Preference On Following Questions</p>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('question4')}}">
         <p>Trainability Level:</p>
         <p>How easy it will be to train your dog, and how willing your dog will be to learn new things. Some breeds just want to make their owner proud, while others prefer to do what they want, when they want to, wherever they want!</br>
             <input type="radio" name="trainability" value="self-willed">Self-Willed</br>

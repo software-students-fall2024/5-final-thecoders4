@@ -8,7 +8,7 @@
 
 {% block main %}
     <p>Choose Your Preference On Following Questions</p>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('question1')}}">
         <p>Affectionate with Family:</p>
         <p>How affectionate a breed is likely to be with family members, or other people he knows well. Some breeds can be aloof with everyone but their owner, while other breeds treat everyone they know like their best friend.</br>
             <input type="radio" name="family" value="independent">Independent</br>

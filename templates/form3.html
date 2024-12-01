@@ -8,7 +8,7 @@
 
 {% block main %}
     <p>Choose Your Preference On Following Questions</p>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('question3')}}">
         <p>Openness to Strangers:</p>
         <p>How welcoming a breed is likely to be towards strangers. Some breeds will be reserved or cautious around all strangers, regardless of the location, while other breeds will be happy to meet a new human whenever one is around!</br>
             <input type="radio" name="openness" value="reserved">Reserved</br>
