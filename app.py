@@ -100,8 +100,39 @@ def create_app():
             query["Drooling Level"] = {"$lte": 2}
         elif session["drooling_level"] == "always":
             query["Drooling Level"] = {"$gte": 4}
+        if session["openness_to_strangers"] == "reserved":
+            query["Openness To Strangers"] = {"$lte": 2}
+        elif session["openness_to_strangers"] == "everyone":
+            query["Openness To Strangers"] = {"$gte": 4}
+        if session["playfulness_level"] == "only":
+            query["Playfulness Level"] = {"$lte": 2}
+        elif session["playfulness_level"] == "non_stop":
+            query["Playfulness Level"] = {"$gte": 4}
+        if session["watchgod/protective_nature"] == "mine":
+            query["Watchdog/Protective Nature"] = {"$lte": 2}
+        elif session["watchgod/protective_nature"] == "vigilant":
+            query["Watchdog/Protective Nature"] = {"$gte": 4}
+        if session["adaptability_level"] == "routine":
+            query["Adaptability Level"] = {"$lte": 2}
+        elif session["adaptability_level"] == "adaptable":
+            query["Adaptability Level"] = {"$gte": 4}
+        if session["trainability_level"] == "self-willed":
+            query["Trainability Level"] = {"$lte": 2}
+        elif session["trainability_level"] == "eager":
+            query["Trainability Level"] = {"$gte": 4}
+        if session["energy_level"] == "couch_potato":
+            query["Energy Level"] = {"$lte": 2}
+        elif session["energy_level"] == "high":
+            query["Energy Level"] = {"$gte": 4}
+        if session["barking_level"] == "alert":
+            query["Barking Level"] = {"$lte": 2}
+        elif session["barking_level"] == "vocal":
+            query["Barking Level"] = {"$gte": 4}
+        if session["mental_stimulation_needs"] == "lounge":
+            query["Mental Stimulation Needs"] = {"$lte": 2}
+        elif session["mental_stimulation_needs"] == "job":
+            query["Mental Stimulation Needs"] = {"$gte": 4}
         docs = collections.find(query,{"_id": 0, "Breed":1})
-        #docs = collections.find({},{"Breed": 1,"Affectionate With Family":1,"Good With Young Children":1,"Good With Other Dogs":1})
         docs_list = list(docs)
         return render_template('result.html',docs=docs_list,count=len(docs_list))
     return app
