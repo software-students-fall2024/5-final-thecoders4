@@ -24,7 +24,7 @@ def create_app():
         data = list(reader)
         for entry in data:
             for key in entry:
-                try: 
+                try:
                     entry[key] = int(entry[key])
                 except ValueError:
                     pass
@@ -73,11 +73,35 @@ def create_app():
         return render_template('form4.html')
     @app.route('/result')
     def result():
-        session["affectionate_with_family"]
-        session["good_with_young_children"]
-        session["good_with_other_dogs"]
-        session["mental_stimulation_needs"]
-    
+        query = {}
+        if session["affectionate_with_family"] == "independent":
+            query["Affectionate With Family"] = {"$lte": 2}
+        elif session["affectionate_with_family"] == "lovey-dovey":
+            query["Affectionate With Family"] = {"$gte": 4}
+        if session["good_with_young_children"] == "not_recommended":
+            query["Good With Young Children"] = {"$lte": 2}
+        elif session["good_with_young_children"] == "good":
+            query["Good With Young Children"] = {"$gte": 4}
+        if session["good_with_other_dogs"] == "not_recommended":
+            query["Good With Other Dogs"] = {"$lte": 2}
+        elif session["good_with_other_dogs"] == "good":
+            query["Good With Other Dogs"] = {"$gte": 4}
+        if session["shedding_level"] == "no_shedding":
+            query["Shedding Level"] = {"$lte": 2}
+        elif session["shedding_level"] == "everywhere":
+            query["Shedding Level"] = {"$gte": 4}
+        if session["coat_grooming_frequency"] == "monthly":
+            query["Coat Grooming Frequency"] = {"$lte": 2}
+        elif session["coat_grooming_frequency"] == "daily":
+            query["Coat Grooming Frequency"] = {"$gte": 4}
+        if session["drooling_level"] == "less":
+            query["Drooling Level"] = {"$lte": 2}
+        elif session["drooling_level"] == "always":
+            query["Drooling Level"] = {"$gte": 4}
+        #docs = collections.find(query,{"_id": 0, "Breed":1})
+        docs = collections.find({"Breed":"Retrievers (Labrador)"},{"Breed": 1})
+        docs_list = list(docs)
+        return render_template('result.html',docs=docs_list,count=len(docs_list))
     return app
 if __name__ == '__main__':
     app = create_app()

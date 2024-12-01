@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Finder{% endblock %}
+
+{% block header %}
+    <h1>Suitable Dog Breeds</h1>
+{% endblock %}
+
+{% block main %}
+    {% if count==0 %}
+        <p>No record found.</p>
+    {% else %}
+        <p>{{count}}</p>
+        {% for doc in docs %}
+            <p>{{doc.Breed}}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
