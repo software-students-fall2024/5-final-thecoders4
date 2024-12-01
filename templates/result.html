@@ -10,7 +10,6 @@
     {% if count==0 %}
         <p>No record found.</p>
     {% else %}
-        <p>{{count}}</p>
         {% for doc in docs %}
             <p>{{doc.Breed}}</p>
             <a href="{{url_for('info',dog_breed=doc.Breed)}}">
