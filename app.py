@@ -29,6 +29,19 @@ def create_app():
                 except ValueError:
                     pass
     collections.insert_many(data)
+    pipeline = [
+        {"$group": {
+            "_id": "$Breed", 
+            "count": {"$sum": 1},  # Count occurrences of each breed
+            "ids": {"$push": "$_id"}  # Collect document IDs for each breed
+        }},
+        {"$match": {"count": {"$gt": 1}}}  # Only include breeds with duplicates
+    ]
+
+    duplicates = list(collections.aggregate(pipeline))
+    for duplicate in duplicates:
+        ids_to_delete = duplicate["ids"][1:]  # Keep the first document, delete the rest
+        collections.delete_many({"_id": {"$in": ids_to_delete}})
     @app.route('/')
     def home():
         """
@@ -98,8 +111,8 @@ def create_app():
             query["Drooling Level"] = {"$lte": 2}
         elif session["drooling_level"] == "always":
             query["Drooling Level"] = {"$gte": 4}
-        #docs = collections.find(query,{"_id": 0, "Breed":1})
-        docs = collections.find({"Breed":"Retrievers (Labrador)"},{"Breed": 1})
+        docs = collections.find(query,{"_id": 0, "Breed":1})
+        #docs = collections.find({"Breed":"Retrievers (Labrador)"},{"Breed": 1,"Affectionate With Family":1,"Good With Young Children":1,"Good With Other Dogs":1})
         docs_list = list(docs)
         return render_template('result.html',docs=docs_list,count=len(docs_list))
     return app
