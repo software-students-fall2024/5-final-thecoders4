@@ -1,3 +1,4 @@
+/*
 * {
     box-sizing: border-box;
     font-family: sans-serif;
@@ -120,3 +121,204 @@ button {
     padding: 0.4rem 1rem;
     font-weight: bold;
 }
+*/
+
+
+/* New version, I comment out the old version incase you still want it */
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    background-color: #f0f8ff;
+    color: #1e1e1e;
+}
+
+
+header {
+    background-color: #d3d3d3;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #1e1e1e;
+}
+
+
+form {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.title {
+    color: #1e1e1e;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+.subtitle {
+    color: #1e1e1e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+
+.sectiontitle {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.section {
+    padding: 1rem;
+    border: 2px solid #1e1e1e;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #f9f9f9;
+    line-height: 1.5;
+}
+
+
+.none {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: #800000;
+}
+
+
+.result-entry {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background-color: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.result-entry > p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+.result-entry > a > button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4682b4;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.result-entry > a > button:hover {
+    background-color: #315f86;
+}
+
+
+.attributes {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+
+.attribute {
+    padding: 0.5rem 0;
+}
+
+
+.attribute > p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.attribute-rating {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.attribute-pill {
+    width: 3rem;
+    height: 0.6rem;
+    border-radius: 0.5rem;
+    margin: 0 0.2rem;
+    background-color: #4682b4;
+}
+
+.attribute-pill.empty {
+    background-color: #d3d3d3;
+}
+
+
+
+
+
+
+
+input[type="radio"] {
+    width: 1.5rem;
+    accent-color: #4682b4;
+    margin-right: 0.5rem;
+}
+
+input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #315f86;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Hadn't done the media queries mobile size yet will implement below later */ 
