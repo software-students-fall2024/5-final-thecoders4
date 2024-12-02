@@ -69,6 +69,19 @@ form {
     margin-left: 1.2rem;
 }
 
+.attributes {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+}
+
+.attribute {
+    padding: 1.5rem 2rem;
+}
+
+.attribute > p {
+    font-size: 1.2rem;
+}
+
 input[type="radio"] {
     width: 2rem;
     accent-color: darkblue;
