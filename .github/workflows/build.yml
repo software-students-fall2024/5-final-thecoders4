@@ -30,8 +30,8 @@ jobs:
             sleep 5
           done
       
-      - name: Run Tests
-        run: docker-compose exec web pytest
+      - name: Run Tests in Debug Mode
+        run: docker-compose exec web pytest -v --maxfail=1
       
       - name: Shut Down Docker Compose Services
         run: docker-compose down
