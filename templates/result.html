@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block main %}
-    <p>Not satisfied with the result? Re-take the quiz by clicking the <a href="{{url_for('question1')}}">link</a></p>
+    <p class="subtitle">Not satisfied with the result? Re-take the quiz by clicking the <a href="{{url_for('question1')}}">link</a></p>
     {% if count==0 %}
         <p class="none">No Breed Found.</p>
     {% else %}

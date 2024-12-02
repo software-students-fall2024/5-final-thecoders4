@@ -1,3 +1,302 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    background-color: #f0f8ff;
+    color: #1e1e1e;
+}
+
+
+header {
+    background-color: #d3d3d3;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #1e1e1e;
+}
+
+
+form {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.title {
+    color: #1e1e1e;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+.subtitle {
+    color: #1e1e1e;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    margin-top: 0.7rem;
+    text-align: center;
+}
+
+
+.sectiontitle {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.section {
+    padding: 1rem;
+    border: 2px solid #1e1e1e;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #f9f9f9;
+    line-height: 1.5;
+}
+
+
+.none {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: #800000;
+}
+
+
+.result-entry {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background-color: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.result-entry > p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+.result-entry > a > button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4682b4;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.result-entry > a > button:hover {
+    background-color: #315f86;
+}
+
+
+.attributes {
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+
+    margin: 1rem;
+    padding: 1rem;
+}
+
+
+.attribute {
+    padding: 0.5rem 0;
+}
+
+
+.attribute > p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.attribute-rating {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.attribute-pill {
+    width: 3rem;
+    height: 0.6rem;
+    border-radius: 0.5rem;
+    margin: 0 0.2rem;
+    background-color: #4682b4;
+}
+
+.attribute-pill.empty {
+    background-color: #d3d3d3;
+}
+
+.caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.back-button {
+    margin-top: 0.8rem;
+}
+
+
+
+
+
+
+input[type="radio"] {
+    width: 1.5rem;
+    accent-color: #4682b4;
+    margin-right: 0.5rem;
+}
+
+input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #315f86;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Media Queries Mobile Screen Size */
+/* For screens 768px and smaller */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    form {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .section {
+        padding: 0.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .result-entry {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-entry > p {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .result-entry > a > button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .attribute-rating {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+    }
+
+    .attribute-pill {
+        width: 2rem;
+        height: 0.4rem;
+    }
+
+    img {
+        max-width: 90%;
+        margin: 1rem auto;
+        display: block;
+    }
+}
+
+/* For screens 480px and smaller */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    input[type="radio"] {
+        width: 1rem;
+    }
+
+    .attribute-pill {
+        width: 1.5rem;
+        height: 0.3rem;
+    }
+}
+
+
+
+/* new version of styling is above, the orginial code is below commented out in case you still need it */
 /*
 * {
     box-sizing: border-box;
@@ -122,203 +421,3 @@ button {
     font-weight: bold;
 }
 */
-
-
-/* New version, I comment out the old version incase you still want it */
-
-
-* {
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-
-body {
-    margin: 0;
-    background-color: #f0f8ff;
-    color: #1e1e1e;
-}
-
-
-header {
-    background-color: #d3d3d3;
-    padding: 2rem;
-    text-align: center;
-    border-bottom: 2px solid #1e1e1e;
-}
-
-
-form {
-    margin: 1rem;
-    padding: 1rem;
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-.title {
-    color: #1e1e1e;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-
-.subtitle {
-    color: #1e1e1e;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-
-.sectiontitle {
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-
-.section {
-    padding: 1rem;
-    border: 2px solid #1e1e1e;
-    border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
-    background-color: #f9f9f9;
-    line-height: 1.5;
-}
-
-
-.none {
-    margin: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0.8rem 1rem;
-    background-color: rgba(255, 0, 0, 0.2);
-    border-radius: 0.5rem;
-    text-align: center;
-    color: #800000;
-}
-
-
-.result-entry {
-    margin: 1rem;
-    padding: 1rem;
-    border: 2px solid #000;
-    border-radius: 0.5rem;
-    background-color: #fdfdfd;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.result-entry > p {
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-
-.result-entry > a > button {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #4682b4;
-    color: #fff;
-    border: none;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-.result-entry > a > button:hover {
-    background-color: #315f86;
-}
-
-
-.attributes {
-    margin: 1rem;
-    padding: 1rem;
-}
-
-
-.attribute {
-    padding: 0.5rem 0;
-}
-
-
-.attribute > p {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-
-.attribute-rating {
-    display: flex;
-    align-items: center;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-.attribute-pill {
-    width: 3rem;
-    height: 0.6rem;
-    border-radius: 0.5rem;
-    margin: 0 0.2rem;
-    background-color: #4682b4;
-}
-
-.attribute-pill.empty {
-    background-color: #d3d3d3;
-}
-
-
-
-
-
-
-
-input[type="radio"] {
-    width: 1.5rem;
-    accent-color: #4682b4;
-    margin-right: 0.5rem;
-}
-
-input[type="radio"]:hover {
-    cursor: pointer;
-}
-
-button {
-    font-size: 1.2rem;
-    padding: 0.6rem 1.5rem;
-    font-weight: bold;
-    background-color: #4682b4;
-    color: white;
-    border: none;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #315f86;
-}
-
-img {
-    max-width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-
-
-
-/* Hadn't done the media queries mobile size yet will implement below later */ 
