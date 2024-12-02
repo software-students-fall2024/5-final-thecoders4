@@ -36,7 +36,7 @@ jobs:
         run: docker-compose build
       
       - name: Run Tests
-        run: pipenv run python -m pytest
+        run: docker-compose exec -T web-app pipenv run pytest
 
       - name: Push Docker Images
         run: |
