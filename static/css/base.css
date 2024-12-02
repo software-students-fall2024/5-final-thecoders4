@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: lightsteelblue;
+}
+
+header {
+    background-color: lightgray;
+    padding: 2rem 2rem;
+}
+
+form {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+}
+
+.title {
+    color: rgb(30, 30, 30);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: rgb(30, 30, 30);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 0.8rem;
+}
+
+.sectiontitle {
+    font-weight: bold;
+}
+
+.section {
+    padding: 0.4rem 0rem;
+    border-top: 2px solid rgb(30, 30, 30);
+    border-bottom: 2px solid rgb(30, 30, 30);
+    margin-bottom: 2.5rem;
+}
+
+.none {
+    margin-left: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.6rem 0.8rem;
+    background-color: rgba(255, 0, 0, 0.4);
+    border-radius: 0.3rem;
+    width: max-content;
+}
+
+.result-entry {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    padding: 0.8rem 0.8rem;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+    display: flex;
+    align-items: center;
+}
+.result-entry > p {
+    font-size: 1.3rem;
+}
+.result-entry > a {
+    margin-left: 1.2rem;
+}
+
+input[type="radio"] {
+    width: 2rem;
+    accent-color: darkblue;
+}
+input[type="radio"]:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+}
