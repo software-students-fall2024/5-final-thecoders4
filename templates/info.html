@@ -9,7 +9,15 @@
 {% block main %}
     <div class="attributes">
         <div class="attribute">
-            <p>Affectionate With Family: {{doc["Affectionate With Family"]}}</p>
+            <p>Affectionate With Family</p>
+            <div class="attribute-rating">
+                {% for i in range(doc["Affectionate With Family"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Affectionate With Family"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
             <p>Good With Young Children: {{doc["Good With Young Children"]}}</p>

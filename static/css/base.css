@@ -82,6 +82,30 @@ form {
     font-size: 1.2rem;
 }
 
+.attribute-rating {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+    border-radius: 0.5rem;
+    background: white;
+    padding: 1rem 1rem;
+}
+
+.attribute-pill {
+    margin: 0;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: darkblue;
+}
+
+.attribute-pill.empty {
+    background-color: lightgray;
+}
+
 input[type="radio"] {
     width: 2rem;
     accent-color: darkblue;
