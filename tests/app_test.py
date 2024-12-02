@@ -35,3 +35,12 @@ def test_question1(client):  # pylint: disable=redefined-outer-name
     questions= [b"Affectionate with Family:", b"Good With Young Children:", b"Good With Other Dogs:"]
     for question in questions:
         assert question in response.data
+
+def test_question2(client):  # pylint: disable=redefined-outer-name
+    response = client.get('/question2')
+    assert response.status_code == 200
+    assert b"Find Your Perfect Dog Companion" in response.data
+    assert b"Choose Your Preference On Following Questions" in response.data
+    questions= [b"Shedding Level:", b"Coat Grooming Frequency:", b"Drooling Level:"]
+    for question in questions:
+        assert question in response.data
