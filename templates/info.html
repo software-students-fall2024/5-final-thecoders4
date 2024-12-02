@@ -10,6 +10,7 @@
     <div class="attributes">
         <div class="attribute">
             <p>Affectionate With Family</p>
+
             <div class="attribute-rating">
                 {% for i in range(doc["Affectionate With Family"]) %}
                     <div class="attribute-pill"></div>
@@ -20,19 +21,64 @@
             </div>
         </div>
         <div class="attribute">
-            <p>Good With Young Children: {{doc["Good With Young Children"]}}</p>
+            <p>Good With Young Children</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Good With Young Children"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Good With Young Children"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Good With Other Dogs: {{doc["Good With Other Dogs"]}}</p>
+            <p>Good With Other Dogs</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Good With Other Dogs"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Good With Other Dogs"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Shedding Level: {{doc["Shedding Level"]}}</p>
+            <p>Shedding Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Shedding Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Shedding Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Coat Grooming Frequency: {{doc["Coat Grooming Frequency"]}}</p>
+            <p>Coat Grooming Frequency</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Coat Grooming Frequency"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Coat Grooming Frequency"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Drooling Level: {{doc["Drooling Level"]}}</p>
+            <p>Drooling Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Drooling Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Drooling Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
             <p>Coat Type: {{doc["Coat Type"]}}</p>
@@ -41,28 +87,100 @@
             <p>Coat Length: {{doc["Coat Length"]}}</p>
         </div>
         <div class="attribute">
-            <p>Openness To Strangers: {{doc["Openness To Strangers"]}}</p>
+            <p>Openness To Strangers</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Openness To Strangers"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Openness To Strangers"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Playfulness Level: {{doc["Playfulness Level"]}}</p>
+            <p>Playfulness Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Playfulness Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Playfulness Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Watchdog/Protective Nature: {{doc["Watchdog/Protective Nature"]}}</p>
+            <p>Watchdog/Protective Nature</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Watchdog/Protective Nature"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Watchdog/Protective Nature"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Adaptability Level: {{doc["Adaptability Level"]}}</p>
+            <p>Adaptability Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Adaptability Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Adaptability Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Trainability Level: {{doc["Trainability Level"]}}</p>
+            <p>Trainability Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Trainability Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Trainability Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Energy Level: {{doc["Energy Level"]}}</p>
+            <p>Energy Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Energy Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Energy Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Barking Level: {{doc["Barking Level"]}}</p>
+            <p>Barking Level</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Barking Level"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Barking Level"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="attribute">
-            <p>Mental Stimulation Needs: {{doc["Mental Stimulation Needs"]}}</p>
+            <p>Mental Stimulation Needs</p>
+
+            <div class="attribute-rating">
+                {% for i in range(doc["Mental Stimulation Needs"]) %}
+                    <div class="attribute-pill"></div>
+                {% endfor %}
+                {% for i in range(5 - doc["Mental Stimulation Needs"]) %}
+                    <div class="attribute-pill empty"></div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
