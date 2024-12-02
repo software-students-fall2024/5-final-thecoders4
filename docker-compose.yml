@@ -1,0 +1,17 @@
+version: '3.10'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+  web-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-app
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017

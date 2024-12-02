@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Finder{% endblock %}
+
+{% block header %}
+    <h1>Find Your Perfect Dog Companion with Family Life</h1>
+{% endblock %}
+
+{% block main %}
+    <p>Choose Your Preference On Following Questions</p>
+    <form method="POST" action="{{ url_for('question1')}}">
+        <p>Affectionate with Family:</p>
+        <p>How affectionate a breed is likely to be with family members, or other people he knows well. Some breeds can be aloof with everyone but their owner, while other breeds treat everyone they know like their best friend.</br>
+            <input type="radio" name="family" value="independent">Independent</br>
+			<input type="radio" name="family" value="lovey-dovey">Lovey-Dovey</br>
+			<input type="radio" name="family" value="both" required>Both are fine</br>
+        </p>
+        <p>Good With Young Children:</p>
+        <p>A breed's level of tolerance and patience with childrens' behavior, and overall family-friendly nature. Dogs should always be supervised around young children, or children of any age who have little exposure to dogs.</br>
+            <input type="radio" name="children" value="not_recommended">Not Recommended</br>
+            <input type="radio" name="children" value="good">Good With Children</br>
+            <input type="radio" name="children" value="both"required >Both are fine</br>
+        </p>
+        <p>Good With Other Dogs:</p>
+        <p>How generally friendly a breed is towards other dogs. Dogs should always be supervised for interactions and introductions with other dogs, but some breeds are innately more likely to get along with other dogs, both at home and in public.</br>
+            <input type="radio" name="dog" value="not_recommended">Not Recommended</br>
+            <input type="radio" name="dog" value="good">Good With Other Dogs</br>
+            <input type="radio" name="dog" value="both" required>Both are fine</br>
+        </p>
+        <button type="submit">Next</button>
+    </form>
+{% endblock %}

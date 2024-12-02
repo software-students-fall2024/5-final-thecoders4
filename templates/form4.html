@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Finder{% endblock %}
+
+{% block header %}
+    <h1>Find Your Perfect Dog Companion with Personalities</h1>
+{% endblock %}
+
+{% block main %}
+    <p>Choose Your Preference On Following Questions</p>
+    <form method="POST" action="{{ url_for('question4')}}">
+        <p>Trainability Level:</p>
+        <p>How easy it will be to train your dog, and how willing your dog will be to learn new things. Some breeds just want to make their owner proud, while others prefer to do what they want, when they want to, wherever they want!</br>
+            <input type="radio" name="trainability" value="self-willed">Self-Willed</br>
+			<input type="radio" name="trainability" value="eager">Eager to Please</br>
+			<input type="radio" name="trainability" value="both" required>Both are fine</br>
+        </p>
+        <p>Energy Level:</p>
+        <p>The amount of exercise and mental stimulation a breed needs. High energy breeds are ready to go and eager for their next adventure. They'll spend their time running, jumping, and playing throughout the day. Low energy breeds are like couch potatoes - they're happy to simply lay around and snooze.</br>
+            <input type="radio" name="energy" value="couch_potato">Couch Potato</br>
+            <input type="radio" name="energy" value="high">High Energy</br>
+            <input type="radio" name="energy" value="both" required>Both are fine</br>
+        </p>
+        <p>Barking Level:</p>
+        <p>How often this breed vocalizes, whether it's with barks or howls. While some breeds will bark at every passer-by or bird in the window, others will only bark in particular situations. Some barkless breeds can still be vocal, using other sounds to express themselves.</br>
+            <input type="radio" name="barking" value="alert">Only To Alert</br>
+            <input type="radio" name="barking" value="vocal">Very Vocal</br>
+            <input type="radio" name="barking" value="both" required>Both are fine</br>
+        </p>
+        <p>Mental Stimulation Needs:</p>
+        <p>How much mental stimulation a breed needs to stay happy and healthy. Purpose-bred dogs can have jobs that require decision-making, problem-solving, concentration, or other qualities, and without the brain exercise they need, they'll create their own projects to keep their minds busy -- and they probably won't be the kind of projects you'd like.</br>
+            <input type="radio" name="mental" value="lounge">Happy to Lounge</br>
+            <input type="radio" name="mental" value="job">Needs a Job or Activity</br>
+            <input type="radio" name="mental" value="both" required>Both are fine</br>
+        </p>
+        <button type="submit">Next</button>
+    </form>
+{% endblock %}

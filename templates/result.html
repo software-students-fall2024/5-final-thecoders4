@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Finder{% endblock %}
+
+{% block header %}
+    <h1>Suitable Dog Breeds</h1>
+{% endblock %}
+
+{% block main %}
+    {% if count==0 %}
+        <p>No record found.</p>
+    {% else %}
+        {% for doc in docs %}
+            <p>{{doc.Breed}}</p>
+            <a href="{{url_for('info',dog_breed=doc.Breed)}}">
+                <button>See More About This Breed</button>
+            </a>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

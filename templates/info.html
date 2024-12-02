@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Pet Finder{% endblock %}
+
+{% block header %}
+    <h1>Specific Information About {{doc.Breed}}</h1>
+{% endblock %}
+
+{% block main %}
+    <p>Affectionate With Family: {{doc["Affectionate With Family"]}}</p>
+    <p>Good With Young Children: {{doc["Good With Young Children"]}}</p>
+    <p>Good With Other Dogs: {{doc["Good With Other Dogs"]}}</p>
+    <p>Shedding Level: {{doc["Shedding Level"]}}</p>
+    <p>Coat Grooming Frequency: {{doc["Coat Grooming Frequency"]}}</p>
+    <p>Drooling Level: {{doc["Drooling Level"]}}</p>
+    <p>Coat Type: {{doc["Coat Type"]}}</p>
+    <p>Coat Length: {{doc["Coat Length"]}}</p>
+    <p>Openness To Strangers: {{doc["Openness To Strangers"]}}</p>
+    <p>Playfulness Level: {{doc["Playfulness Level"]}}</p>
+    <p>Watchdog/Protective Nature: {{doc["Watchdog/Protective Nature"]}}</p>
+    <p>Adaptability Level: {{doc["Adaptability Level"]}}</p>
+    <p>Trainability Level: {{doc["Trainability Level"]}}</p>
+    <p>Energy Level: {{doc["Energy Level"]}}</p>
+    <p>Barking Level: {{doc["Barking Level"]}}</p>
+    <p>Mental Stimulation Needs: {{doc["Mental Stimulation Needs"]}}</p>
+{% endblock %}
