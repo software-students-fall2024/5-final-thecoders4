@@ -17,12 +17,21 @@ def client():
         yield client
 
 def test_root1(client):  # pylint: disable=redefined-outer-name
-    response = client.get("/")
-    #html_text = response.data#.decode("utf-8")
-    #assert "Start Recording" in html_text
+    response = client.get('/')
     assert response.status_code == 200
+    assert b"Find Your Perfect Dog Companion" in response.data
+    assert b"Answer a few quick questions to discover the dog breed that suits your likestyle best." in response.data
 
 def test_404(client):  # pylint: disable=redefined-outer-name
     """Test a non-existent route, expecting 404 error"""
     response = client.get("/non-existent-route")
     assert response.status_code == 404
+
+def test_question1(client):  # pylint: disable=redefined-outer-name
+    response = client.get('/question1')
+    assert response.status_code == 200
+    assert b"Find Your Perfect Dog Companion" in response.data
+    assert b"Choose Your Preference On Following Questions" in response.data
+    questions= [b"Affectionate with Family:", b"Good With Young Children:", b"Good With Other Dogs:"]
+    for question in questions:
+        assert question in response.data
