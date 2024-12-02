@@ -4,7 +4,7 @@ import csv
 from flask import Flask, render_template, request, url_for, session, redirect
 from pymongo import MongoClient
 
-def create_app():
+def create_app(skip_initialization = False):
     """
     Create and configure the Flask application
     Returns: app: the Flask application object
@@ -16,7 +16,8 @@ def create_app():
     client = MongoClient(mongo_uri)
     db = client.database
     collections = db.collections
-    collections.drop()
+    if not skip_initialization:
+        collections.drop()
     #handle the csv files
     csv_file_path = "archive/breed_traits.csv"
     
@@ -29,7 +30,8 @@ def create_app():
                     entry[key] = int(entry[key])
                 except ValueError:
                     pass
-    collections.insert_many(data)
+    if not skip_initialization:
+        collections.insert_many(data)
     
     csv_file_path = "archive/breed_rank.csv"
     with open(csv_file_path, mode="r") as file:
@@ -38,10 +40,11 @@ def create_app():
             breed = row["Breed"]
             link = row["links"]
             image = row["Image"]
-            collections.update_one(
-                {"Breed": breed},           # Match condition
-                {"$set": {"links": link, "Image": image}}  # Add or update fields
-            )
+            if not skip_initialization:
+                collections.update_one(
+                    {"Breed": breed},           # Match condition
+                    {"$set": {"links": link, "Image": image}}  # Add or update fields
+                )
     
     @app.route('/')
     def home():
