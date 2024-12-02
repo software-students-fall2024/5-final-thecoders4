@@ -3,11 +3,11 @@
 {% block title %}Pet Finder{% endblock %}
 
 {% block header %}
-    <h1>Find Your Perfect Dog Companion</h1>
+    <h1 class="title">Find Your Perfect Dog Companion</h1>
 {% endblock %}
 
 {% block main %}
-    <p>Answer a few quick questions to discover the dog breed that suits your likestyle best.</p>
+    <p class="subtitle">Answer a few quick questions to discover the dog breed that suits your likestyle best.</p>
     <form method="GET" action="{{ url_for('question1') }}">
         <button>Start Quiz</button>
     </form>
