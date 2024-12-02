@@ -10,6 +10,7 @@ python-dotenv = "*"
 coverage = "*"
 pytest = "*"
 exceptiongroup = "*"
+tomli = "*"
 
 [dev-packages]
 
