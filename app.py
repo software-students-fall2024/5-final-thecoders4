@@ -30,8 +30,19 @@ def create_app():
                 except ValueError:
                     pass
     collections.insert_many(data)
-    print("connect Successfully!")
-    print(collections.count_documents({}))
+    
+    csv_file_path = "archive/breed_rank.csv"
+    with open(csv_file_path, mode="r") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            breed = row["Breed"]
+            link = row["links"]
+            image = row["Image"]
+            collections.update_one(
+                {"Breed": breed},           # Match condition
+                {"$set": {"links": link, "Image": image}}  # Add or update fields
+            )
+    
     @app.route('/')
     def home():
         """
@@ -46,7 +57,6 @@ def create_app():
             session["good_with_young_children"] = request.form.get("children")
             session["good_with_other_dogs"] = request.form.get("dog")
             return redirect(url_for('question2'))
-        print("are you here?")
         return render_template('form1.html')
     @app.route('/question2', methods=['GET','POST'])
     def question2():

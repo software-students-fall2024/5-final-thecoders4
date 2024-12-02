@@ -8,6 +8,7 @@
 
 {% block main %}
     <div class="attributes">
+        <img src="{{doc.Image}}">
         <div class="attribute">
             <p>Affectionate With Family</p>
 
@@ -182,5 +183,9 @@
                 {% endfor %}
             </div>
         </div>
+        <p>
+            Back to <a href="{{url_for('result')}}">Result Page</a> </br>
+            Learn more in <a href="{{ doc.links }}" target="_blank">Official Page</a>
+        </p>
     </div>
 {% endblock %}
