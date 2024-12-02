@@ -57,7 +57,6 @@ def create_app():
             session["good_with_young_children"] = request.form.get("children")
             session["good_with_other_dogs"] = request.form.get("dog")
             return redirect(url_for('question2'))
-        print("are you here?")
         return render_template('form1.html')
     @app.route('/question2', methods=['GET','POST'])
     def question2():
