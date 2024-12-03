@@ -1,5 +1,5 @@
 """
-This module contains unit tests for ml-client.
+This module contains unit tests for the web app.
 """
 
 import io
