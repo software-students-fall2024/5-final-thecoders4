@@ -19,7 +19,10 @@ def create_app(skip_initialization = False):
     if not skip_initialization:
         collections.drop()
     #handle the csv files
-    csv_file_path = "archive/breed_traits.csv"
+    if not skip_initialization:
+        csv_file_path = "archive/breed_traits.csv"
+    else:
+        csv_file_path = "./archive/breed_traits.csv"
     
     with open(csv_file_path, mode="r") as file:
         reader = csv.DictReader(file)
@@ -33,7 +36,10 @@ def create_app(skip_initialization = False):
     if not skip_initialization:
         collections.insert_many(data)
     
-    csv_file_path = "archive/breed_rank.csv"
+    if not skip_initialization:
+        csv_file_path = "archive/breed_rank.csv"
+    else:
+        csv_file_path = "./archive/breed_rank.csv"
     with open(csv_file_path, mode="r") as file:
         reader = csv.DictReader(file)
         for row in reader:
