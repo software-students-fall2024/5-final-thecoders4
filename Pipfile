@@ -7,8 +7,10 @@ name = "pypi"
 flask = "*"
 pymongo = "*"
 python-dotenv = "*"
-pytest = "*"
 coverage = "*"
+pytest = "*"
+exceptiongroup = "*"
+tomli = "*"
 
 [dev-packages]
 
