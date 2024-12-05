@@ -63,6 +63,9 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: IMAGE_NAME=hannahan2/web-app
           script: |
+            # Debug the environment
+            echo "Debugging environment variables:"
+            env
             echo "Using IMAGE_NAME: $IMAGE_NAME"
             # Stop running container
             docker stop $IMAGE_NAME || true
