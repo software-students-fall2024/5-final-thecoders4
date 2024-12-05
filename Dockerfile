@@ -5,10 +5,10 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install pipenv
-RUN pipenv install
+RUN pipenv install --deploy --system
 
 ADD . .
 
 EXPOSE 5000
 
-CMD ["pipenv","run","python3","app.py","--host=0.0.0.0"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:create_app()"]
