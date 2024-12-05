@@ -152,8 +152,11 @@ def create_app(skip_initialization = False):
             query["Mental Stimulation Needs"] = {"$lte": 2}
         elif session["mental_stimulation_needs"] == "job":
             query["Mental Stimulation Needs"] = {"$gte": 4}
-        docs = collections.find(query)
-        docs_list = list(docs)
+        if "mock_docs" in session:
+            docs_list = session["mock_docs"]
+        else:
+            docs = collections.find(query)
+            docs_list = list(docs)
         return render_template('result.html',docs=docs_list,count=len(docs_list))
     @app.route('/info/<dog_breed>')
     def info(dog_breed):
