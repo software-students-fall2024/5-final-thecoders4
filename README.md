@@ -13,7 +13,7 @@ An exercise to put to practice software development teamwork, subsystem communic
 
 ## Description
 
-A web application designed to help users find the ideal dog breed based on their preferences and lifestyle. The app will present users with a series of questions about key dog traits, such as trainability, friendliness, energy level, and compatibility with children or other pets. Based on their responses, the app will recommend several suitable dog breeds, providing detailed information about each breed.
+A web application designed to help users find the ideal dog breed based on their preferences and lifestyle. The app will present users with a series of questions about key dog traits, such as trainability, friendliness, energy level, and compatibility with children or other pets. Based on their responses, the app will recommend several suitable dog breeds, providing detailed information about each breed. If the app is unable to recommend a suitable breed, users will be encouraged to try again until a match is found.
 
 ## Docker Images
 
