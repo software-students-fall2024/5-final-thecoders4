@@ -64,13 +64,13 @@ jobs:
           envs: IMAGE_NAME=hannahan2/web-app
           script: |
             # Stop running container
-            docker stop $(echo $IMAGE_NAME)
+            docker stop $IMAGE_NAME || true
             # Remove old container
-            docker rm $(echo $IMAGE_NAME)
+            docker rm $IMAGE_NAME || true
             # Pull the new image from Docker Hub
-            docker pull $(echo $IMAGE_NAME):latest
+            docker pull $IMAGE_NAME:latest
             # Run a new container from a new image
             docker run -d \
             --restart always \
-            --name $(echo $IMAGE_NAME) \
-            $(echo $IMAGE_NAME):latest
+            --name $IMAGE_NAME \
+            $IMAGE_NAME:latest
