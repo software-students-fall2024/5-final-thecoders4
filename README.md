@@ -21,10 +21,35 @@ Provided below is a link to our custom docker image for the web-app subsystem.
 
 [Docker Image Link](https://hub.docker.com/r/hannahan2/web-app)
 
-## Setup Instructions
+## Run the software as users
 
-In order to run this project locally, you must enter the following command in the terminal at the project root directory.
+Open a web browser and go to [link](http://165.227.79.238:5001/)
+
+## Test and run the software as developers
+
+1. Clone this repository to the editor in your computer
+
+2. Set up a virtual environment and install dependencies: 
+```
+pip install pipenv
+pipenv install
+pipenv shell
+```
+
+3. Run tests and check the code coverage:
 
 ```
-docker compose up
+coverage run -m pytest
+coverage report -m
 ```
+
+4. Install and run the ```Docker Desktop```
+
+5. Run the app: 
+```
+docker-compose up
+```
+
+6. View the app in your browser: 
+
+open a web browser and go to [link](http://127.0.0.1:5001)
