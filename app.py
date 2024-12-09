@@ -97,61 +97,61 @@ def create_app(skip_initialization = False):
     def result():
         query = {}
         if session["affectionate_with_family"] == "independent":
-            query["Affectionate With Family"] = {"$lte": 2}
+            query["Affectionate With Family"] = {"$lte": 3}
         elif session["affectionate_with_family"] == "lovey-dovey":
-            query["Affectionate With Family"] = {"$gte": 4}
+            query["Affectionate With Family"] = {"$gte": 3}
         if session["good_with_young_children"] == "not_recommended":
-            query["Good With Young Children"] = {"$lte": 2}
+            query["Good With Young Children"] = {"$lte": 3}
         elif session["good_with_young_children"] == "good":
-            query["Good With Young Children"] = {"$gte": 4}
+            query["Good With Young Children"] = {"$gte": 3}
         if session["good_with_other_dogs"] == "not_recommended":
-            query["Good With Other Dogs"] = {"$lte": 2}
+            query["Good With Other Dogs"] = {"$lte": 3}
         elif session["good_with_other_dogs"] == "good":
-            query["Good With Other Dogs"] = {"$gte": 4}
+            query["Good With Other Dogs"] = {"$gte": 3}
         if session["shedding_level"] == "no_shedding":
-            query["Shedding Level"] = {"$lte": 2}
+            query["Shedding Level"] = {"$lte": 3}
         elif session["shedding_level"] == "everywhere":
-            query["Shedding Level"] = {"$gte": 4}
+            query["Shedding Level"] = {"$gte": 3}
         if session["coat_grooming_frequency"] == "monthly":
-            query["Coat Grooming Frequency"] = {"$lte": 2}
+            query["Coat Grooming Frequency"] = {"$lte": 3}
         elif session["coat_grooming_frequency"] == "daily":
-            query["Coat Grooming Frequency"] = {"$gte": 4}
+            query["Coat Grooming Frequency"] = {"$gte": 3}
         if session["drooling_level"] == "less":
-            query["Drooling Level"] = {"$lte": 2}
+            query["Drooling Level"] = {"$lte": 3}
         elif session["drooling_level"] == "always":
-            query["Drooling Level"] = {"$gte": 4}
+            query["Drooling Level"] = {"$gte": 3}
         if session["openness_to_strangers"] == "reserved":
-            query["Openness To Strangers"] = {"$lte": 2}
+            query["Openness To Strangers"] = {"$lte": 3}
         elif session["openness_to_strangers"] == "everyone":
-            query["Openness To Strangers"] = {"$gte": 4}
+            query["Openness To Strangers"] = {"$gte": 3}
         if session["playfulness_level"] == "only":
-            query["Playfulness Level"] = {"$lte": 2}
+            query["Playfulness Level"] = {"$lte": 3}
         elif session["playfulness_level"] == "non_stop":
-            query["Playfulness Level"] = {"$gte": 4}
+            query["Playfulness Level"] = {"$gte": 3}
         if session["watchgod/protective_nature"] == "mine":
-            query["Watchdog/Protective Nature"] = {"$lte": 2}
+            query["Watchdog/Protective Nature"] = {"$lte": 3}
         elif session["watchgod/protective_nature"] == "vigilant":
-            query["Watchdog/Protective Nature"] = {"$gte": 4}
+            query["Watchdog/Protective Nature"] = {"$gte": 3}
         if session["adaptability_level"] == "routine":
-            query["Adaptability Level"] = {"$lte": 2}
+            query["Adaptability Level"] = {"$lte": 3}
         elif session["adaptability_level"] == "adaptable":
-            query["Adaptability Level"] = {"$gte": 4}
+            query["Adaptability Level"] = {"$gte": 3}
         if session["trainability_level"] == "self-willed":
-            query["Trainability Level"] = {"$lte": 2}
+            query["Trainability Level"] = {"$lte": 3}
         elif session["trainability_level"] == "eager":
-            query["Trainability Level"] = {"$gte": 4}
+            query["Trainability Level"] = {"$gte": 3}
         if session["energy_level"] == "couch_potato":
-            query["Energy Level"] = {"$lte": 2}
+            query["Energy Level"] = {"$lte": 3}
         elif session["energy_level"] == "high":
-            query["Energy Level"] = {"$gte": 4}
+            query["Energy Level"] = {"$gte": 3}
         if session["barking_level"] == "alert":
-            query["Barking Level"] = {"$lte": 2}
+            query["Barking Level"] = {"$lte": 3}
         elif session["barking_level"] == "vocal":
-            query["Barking Level"] = {"$gte": 4}
+            query["Barking Level"] = {"$gte": 3}
         if session["mental_stimulation_needs"] == "lounge":
-            query["Mental Stimulation Needs"] = {"$lte": 2}
+            query["Mental Stimulation Needs"] = {"$lte": 3}
         elif session["mental_stimulation_needs"] == "job":
-            query["Mental Stimulation Needs"] = {"$gte": 4}
+            query["Mental Stimulation Needs"] = {"$gte": 3}
         if "mock_docs" in session:
             docs_list = session["mock_docs"]
         else:
