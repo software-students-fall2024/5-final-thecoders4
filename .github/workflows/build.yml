@@ -52,7 +52,7 @@ jobs:
   deploy: 
     needs: [deliver]
     runs-on: ubuntu-latest
-
+    timeout-minutes: 5
     steps:
       - name: Login to Remote Server and Deploy with Docker Compose
         uses: appleboy/ssh-action@v0.1.3
